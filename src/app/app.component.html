@@ -1,0 +1,19 @@
+<app-banner></app-banner>
+<br>
+<br>
+<div class="container">
+  <form #form="ngForm">
+    <div class="row mt-3 justify-content-center">
+      <div class="col-lg-3 col-md-4 col-sm-7 mb-2">
+        <re-captcha class="justify-content-center" (resolved)="send(form)" id="recaptcha" name="recaptcha" #recaptcha="ngModel" [(ngModel)]="token" required
+          [class.is-invalid]="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)"></re-captcha>
+        <div *ngIf="recaptcha.invalid && (recaptcha.dirty || recaptcha.touched)" class="invalid-feedback">
+          <div *ngIf="recaptcha.errors?.['required']">Su respuesta es necesaria.</div>
+        </div>
+      <div><button type="button" class="btn btn-sm btn-danger " (click)="cancel()">Cancelar</button></div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<router-outlet></router-outlet>
