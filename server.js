@@ -2,10 +2,6 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const cors = require('cors');
-app.use(cors({
-    origin : '*'
-}));
 
 
 // Serve only the static files form the dist directory
