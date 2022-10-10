@@ -43,6 +43,8 @@ export class AppComponent {
     }
 
     let response: CaptchaResponse = {status:"success",token:this.token};
+    console.log("Sending response back to ODA");
+    console.log(this.callbackURL);
     this.captchaService.sendResponse(response).subscribe();
   }
 
