@@ -26,7 +26,6 @@ export class CaptchaService {
 
    setcallbackURL(callbackURL: string) {
     this.callbackURL = callbackURL;
-    this.httpOptions.headers.
   }
 
    sendResponse(captchaResponse: any) {
