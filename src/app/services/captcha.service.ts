@@ -14,7 +14,7 @@ export class CaptchaService {
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Origin': "https://idcs-oda-278c27aea07d48a8b8ac413aa8aa67c1-da2.data.digitalassistant.oci.oraclecloud.com/",
       'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
       'Access-Control-Allow-Headers':
         'X-Requested-With, content-type, Authorization',
@@ -26,6 +26,7 @@ export class CaptchaService {
 
    setcallbackURL(callbackURL: string) {
     this.callbackURL = callbackURL;
+    this.httpOptions.headers.
   }
 
    sendResponse(captchaResponse: any) {
