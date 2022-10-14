@@ -14,7 +14,6 @@ export class CaptchaService {
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': "*",
       'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, PATCH, OPTIONS',
       'Access-Control-Allow-Headers':
         'X-Requested-With, content-type',
@@ -31,6 +30,6 @@ export class CaptchaService {
    sendResponse(captchaResponse: any) {
     const url = this.callbackURL;
     console.log(this.callbackURL);
-    return this.http.post<any>(url,captchaResponse,this.httpOptions);
+    return this.http.post<any>(url,captchaResponse);
   }
 }
