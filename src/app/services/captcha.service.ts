@@ -30,6 +30,6 @@ export class CaptchaService {
    sendResponse(captchaResponse: any) {
     const url = this.callbackURL;
     console.log(this.callbackURL);
-    return this.http.post<any>(url,captchaResponse);
+    return this.http.post<any>(url,captchaResponse, this.httpOptions);
   }
 }
