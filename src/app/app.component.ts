@@ -49,7 +49,6 @@ export class AppComponent {
     console.log(this.callbackURL);
     this.captchaService.sendResponse(response).subscribe({
       next:(response: any) => {
-        delay(500);
         window.open('','_self',''); window.close();
       }
     });
