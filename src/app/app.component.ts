@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { NgForm, SelectMultipleControlValueAccessor } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
+import { delay } from 'rxjs';
+import { textChangeRangeIsUnchanged } from 'typescript';
 import { CaptchaService } from './services/captcha.service';
 import {
   CancelResponse,
@@ -47,6 +49,7 @@ export class AppComponent {
     console.log(this.callbackURL);
     this.captchaService.sendResponse(response).subscribe({
       next:(response: any) => {
+        delay(500);
         window.open('','_self',''); window.close();
       }
     });
