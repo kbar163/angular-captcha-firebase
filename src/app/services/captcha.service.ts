@@ -11,11 +11,7 @@ import {
 export class CaptchaService {
 
   private callbackURL: string;
-  private httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type': 'application/json',
-    })
-  };
+  
   constructor(private http: HttpClient) {
     this.callbackURL = "";
    }
@@ -27,6 +23,6 @@ export class CaptchaService {
    sendResponse(captchaResponse: any) {
     const url = this.callbackURL;
     console.log(this.callbackURL);
-    return this.http.post<any>(url,captchaResponse, this.httpOptions);
+    return this.http.post<any>(url,captchaResponse);
   }
 }
