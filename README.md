@@ -32,3 +32,13 @@ Ejecute `ng generate component component-name` para generar un nuevo componente.
 
 Ejecute `ng build` para construir el proyecto. Los artefactos construidos se guardaran en el directorio `dist/`.
 
+## Exponiendo el proyecto para pruebas remotas
+
+Para exponer el servidor de prueba a acceso remoto, use una herramienta de tunneling como Ngrok. Para instlar Ngrok en windows, descargue el zip en el siguiente enlance [Ngrok](https://ngrok.com/download) y ejecute ngrok.exe. Esto instalara Ngrok en su maquina local. Es importante agregar Ngrok a PATH para poder ejecutarlo desde una terminal en cualquier directorio. Se recomienda seguir los pasos de instalacion detallados en el siguiente enlance [Instalacion Ngrok](https://www.c-sharpcorner.com/article/installing-ngrok-on-windows/).
+
+Seguidamente, para poder crear un link de acceso remoto a su servidor de pruebas local con Ngrok, abra una terminal y ejecute el comando `ngrok http <PORT>`
+Remplace <PORT> por el numero de puerto en el que se ejecuta su servidor de pruebas, por default, los proyectos de angular ejecutan el servidor de pruebas en el puerto
+4200, en el caso de este proyecto el comando `ngrok http 4200` creara un Forwarding link que puede compartir para hacer uso externo. NO SE RECOMIENDA COMPARTIR el link
+publicamente ya que Ngrok esta exponiendo su maquina local a traves de un tunel.
+
+
